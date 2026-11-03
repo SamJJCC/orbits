@@ -10,6 +10,8 @@
 #include "bn_sprite_items_dot.h"
 // #include "bn_sprite_items_square.h"
 #include "Center.h"
+#include "bn_sprite_items_planet.h"
+
 
 
 
@@ -43,6 +45,13 @@ int main() {
                 orbiters.pop_back();
             }
         }
+        // if start is pressed, all orbits are removed
+        if(bn::keypad::start_pressed()){
+             while(orbiters.size() > 0) {
+                orbiters.pop_back();
+            }
+        }
+
 
         center.update();
         for(Orbiter& orbiter : orbiters) {
